@@ -4,8 +4,8 @@ from django.db import models
 class User(models.Model):
     
     class Role(models.TextChoices):
-        REGULAR = 'REGULAR', 
-        ADMIN = 'ADMIN'
+        REGULAR = 'Regular', 
+        ADMIN = 'Admin'
     
     firstName = models.CharField(max_length = 100)
     lastName= models.CharField(max_length = 100)
