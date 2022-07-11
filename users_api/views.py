@@ -48,12 +48,13 @@ class UserList(View):
             'users': user_data,
             'count': user_count,
         }
+        
         return JsonResponse(data)
     
  
     
 @method_decorator(csrf_exempt, name='dispatch')
-class UserListUpdate(View):
+class UserSingle(View):
     def patch(self,request,user_id):
         data = json.loads(request.body.decode("utf-8"))
         user = User.objects.get(id = user_id)
@@ -74,5 +75,19 @@ class UserListUpdate(View):
         user.delete()
         data = {
             'message':f"User {user.firstName} {user.lastName} with email:{user.email} deleted successfully",
+        }
+        return JsonResponse(data)
+    
+    def get(self,request,user_id):
+        user = User.objects.get(id = user_id)
+        data = {
+            'firstName': user.firstName,
+            'lastName': user.lastName,
+            'email':user.email,
+            'number':user.number,
+            'role':user.role,
+        }
+        data = {
+            'message':f"User {user.firstName} {user.lastName} with email:{user.email} retrieved successfully",
         }
         return JsonResponse(data)
