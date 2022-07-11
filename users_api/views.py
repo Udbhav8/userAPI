@@ -48,13 +48,12 @@ class UserList(View):
             'users': user_data,
             'count': user_count,
         }
-        
         return JsonResponse(data)
     
  
     
 @method_decorator(csrf_exempt, name='dispatch')
-class UserSingle(View):
+class UserListUpdate(View):
     def patch(self,request,user_id):
         data = json.loads(request.body.decode("utf-8"))
         user = User.objects.get(id = user_id)
@@ -78,6 +77,8 @@ class UserSingle(View):
         }
         return JsonResponse(data)
     
+@method_decorator(csrf_exempt, name='dispatch')
+class UserGetOne(View):
     def get(self,request,user_id):
         user = User.objects.get(id = user_id)
         data = {
@@ -86,8 +87,5 @@ class UserSingle(View):
             'email':user.email,
             'number':user.number,
             'role':user.role,
-        }
-        data = {
-            'message':f"User {user.firstName} {user.lastName} with email:{user.email} retrieved successfully",
         }
         return JsonResponse(data)
