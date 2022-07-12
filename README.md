@@ -2,7 +2,13 @@
 
 This API service is hosted live on the endpoint https://usersappudbhav.herokuapp.com
 
-An example app using this API service is hosted on https://users-app-frontend.vercel.app and the source code for this app can be found on https://github.com/Udbhav8/usersAppFrontend
+An example app using this API endpoint is hosted on https://users-app-frontend.vercel.app and the source code for this app can be found on https://github.com/Udbhav8/usersAppFrontend
+
+## Live API ENDPOINT
+     https://usersappudbhav.herokuapp.com
+     
+## Live Nextjs/React app using the endpoint
+    https://users-app-frontend.vercel.app
 
 ## Installing Dependencies
 
