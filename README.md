@@ -74,10 +74,11 @@ The REST API to the example app is described below.
 
 `DELETE /update-user/id`
 
-  curl -X DELETE http://127.0.0.1:8000/update-user/1
+
+    curl -X DELETE http://127.0.0.1:8000/update-user/1
 
 ### Response
 
-   {'message':"User Udbhav Agarwal  with email:udbhav.agarwal7@gmail.com deleted successfully"}
+     {'message':"User Udbhav Agarwal  with email:udbhav.agarwal7@gmail.com deleted successfully"}
 
 
